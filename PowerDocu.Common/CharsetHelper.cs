@@ -27,8 +27,8 @@ namespace PowerDocu.Common
             }
 
             var ascii = new ASCIIEncoding();
-            byte[] encodedBytes = ascii.GetBytes(stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(":", "-"));
-            var cleaned = ascii.GetString(encodedBytes).Replace("?", "-").Replace("<", "-").Replace(">", "-").Replace("/", "-").Replace("|", "-").Replace(",", "-");
+            byte[] encodedBytes = ascii.GetBytes(stringBuilder.ToString().Normalize(NormalizationForm.FormC).Replace(":", "_"));
+            var cleaned = ascii.GetString(encodedBytes).Replace("?", "_").Replace("<", "_").Replace(">", "_").Replace("/", "_").Replace("|", "_").Replace(",", "_").Replace(' ', '-');
             return cleaned;
         }
     }
